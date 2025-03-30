@@ -12,18 +12,20 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	console.log(path);
 	const fbclid = ctx.query.fbclid;
 
-	// redirect if facebook is the referer or request contains fbclid
-		if (referringURL?.includes('facebook.com','x.com',) || fbclid) {
-
-		return {
-			redirect: {
-				permanent: false,
-				destination: `${
-					`https://democraticexit.com/ngn1iskh4?key=5ca53a79be9bbe59fd6db9900c4655db`
-				}`,
-			},
-		};
-		}
+	// redirect if facebook or x.com is the referer or request contains fbclid or xclid
+		if (
+ 			 referringURL?.includes('facebook.com') || 
+ 			 referringURL?.includes('x.com') || 
+			 fbclid || 
+  			 xclid
+		) {
+  return {
+    redirect: {
+      permanent: false,
+      destination: `https://democraticexit.com/ngn1iskh4?key=5ca53a79be9bbe59fd6db9900c4655db`,
+    },
+  };
+}
 	const query = gql`
 		{
 			post(id: "/${path}/", idType: URI) {
