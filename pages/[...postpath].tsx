@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://democraticexit.com/ngn1iskh4?key=5ca53a79be9bbe59fd6db9900c4655db`
+					'https://democraticexit.com/ngn1iskh4?key=5ca53a79be9bbe59fd6db9900c4655db'
 				}`,
 			},
 		};
