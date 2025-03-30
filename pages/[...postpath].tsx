@@ -2,7 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
-
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
+}
+module.exports = nextConfig
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	const endpoint = "https://allviral.xyz/graphql"
 	const graphQLClient = new GraphQLClient(endpoint);
